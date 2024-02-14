@@ -42,7 +42,7 @@ public class PersonServices {
 	public Person create(Person person) {
 		logger.info("Creating one person!");
 		
-		return person;
+		return personRepository.save(person);
 	}
 	
 	public Person update(Person person) {
