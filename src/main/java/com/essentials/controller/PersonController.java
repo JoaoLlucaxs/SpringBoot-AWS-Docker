@@ -2,11 +2,12 @@ package com.essentials.controller;
 
 import java.util.List;
 
+import com.essentials.data.vo.v1.PersonVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.essentials.model.Person;
+
 import com.essentials.services.PersonServices;
 
 @RestController
@@ -17,27 +18,27 @@ public class PersonController {
 	private PersonServices service;
 	
 	@GetMapping (produces = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
-	public List<Person> findAllPerson() {
+	public List<PersonVO> findAllPerson() {
 		return service.findAll();
 	}
 	
 	
 	@GetMapping(value = "/{id}",produces = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
-	public Person findByIdPerson(@PathVariable(value = "id") Long id) throws Exception{
+	public PersonVO findByIdPerson(@PathVariable(value = "id") Long id) throws Exception{
 		
 		return service.findById(id);
 	}
 	
 	@PostMapping(consumes =  org.springframework.http.MediaType.APPLICATION_JSON_VALUE,
 			produces = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
-	public Person createPerson(@RequestBody Person person) throws Exception{
+	public PersonVO createPerson(@RequestBody PersonVO person) throws Exception{
 		
 		return service.create(person);
 	}
 	
 	@PutMapping(consumes =  org.springframework.http.MediaType.APPLICATION_JSON_VALUE,
 			produces = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
-	public Person updatePerson(@RequestBody Person person) throws Exception{
+	public PersonVO updatePerson(@RequestBody PersonVO person) throws Exception{
 		
 		return service.update(person);
 	}
