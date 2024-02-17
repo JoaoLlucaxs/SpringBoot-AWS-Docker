@@ -1,18 +1,25 @@
 package com.essentials.data.vo.v1;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+//TESTING SERIALIZATION IN VO -> @JsonPropertyOrder({"id","address","first_name","lastName","gender"})
 public class PersonVOV1 implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
 
+	// TESTING SERIALIZATION IN VO -> @JsonProperty("first_name")
 	private String firstName;
 	private String lastName;
 
 	private String address;
+	//TESTING SERIALIZATION IN VO -> @JsonIgnore
 	private String gender;
 
 	public PersonVOV1() {};

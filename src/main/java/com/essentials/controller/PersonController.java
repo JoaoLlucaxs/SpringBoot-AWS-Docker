@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.*;
 import com.essentials.services.PersonServices;
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("api/person/v1")
 public class PersonController {
     
 	@Autowired
-	 PersonServices service;
+	private PersonServices service;
 	
 	@GetMapping (produces = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
 	public List<PersonVOV1> findAllPerson() {
