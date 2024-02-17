@@ -1,11 +1,9 @@
 package com.essentials.data.vo.v1;
 
-import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-public class PersonVO implements Serializable{
+public class PersonVOV1 implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
@@ -17,7 +15,7 @@ public class PersonVO implements Serializable{
 	private String address;
 	private String gender;
 
-	public PersonVO() {};
+	public PersonVOV1() {};
 	
 	
 	public Long getId() {
@@ -50,23 +48,17 @@ public class PersonVO implements Serializable{
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		PersonVO other = (PersonVO) obj;
-		return Objects.equals(id, other.id);
-	}
-	
-	
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PersonVOV1 personVOV1 = (PersonVOV1) o;
+        return Objects.equals(id, personVOV1.id) && Objects.equals(firstName, personVOV1.firstName) && Objects.equals(lastName, personVOV1.lastName) && Objects.equals(address, personVOV1.address) && Objects.equals(gender, personVOV1.gender);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, address, gender);
+    }
 }
