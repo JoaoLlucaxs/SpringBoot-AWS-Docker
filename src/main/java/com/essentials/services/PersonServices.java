@@ -25,7 +25,12 @@ public class PersonServices {
 	@Autowired
 	PersonMapper personMapper;
 
-	
+	public List<PersonVOV1> findAll() {
+		logger.info("Finding all people!");
+
+		return DozerMapper.parseListObjects(personRepository.findAll(), PersonVOV1.class) ;
+	}
+
 	public PersonVOV1 findById(Long id) {
     	logger.info("Finding one person!");
     	
@@ -40,16 +45,8 @@ public class PersonServices {
 		// convertendo as modificações do model e inserindo em vo
 		return DozerMapper.parseObject(entity, PersonVOV1.class);
     }
-	
-	
-	public List<PersonVOV1> findAll() {
-		 logger.info("Finding all people!");
-		 
-		
-		return DozerMapper.parseListObjects(personRepository.findAll(), PersonVOV1.class) ;
-	}
-	
-	
+
+
 	public PersonVOV1 create(PersonVOV1 person) {
 		logger.info("Creating one person!");
 
