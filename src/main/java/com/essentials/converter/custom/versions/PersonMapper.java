@@ -1,4 +1,4 @@
-package com.essentials.mapper.custom.versions;
+package com.essentials.converter.custom.versions;
 
 import com.essentials.data.vo.v2.PersonVOV2;
 import com.essentials.model.Person;
