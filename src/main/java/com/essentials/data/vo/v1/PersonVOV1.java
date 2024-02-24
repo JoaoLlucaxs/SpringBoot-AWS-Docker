@@ -10,10 +10,12 @@ import java.io.Serializable;
 import java.util.Objects;
 
 //TESTING SERIALIZATION IN VO -> @JsonPropertyOrder({"id","address","first_name","lastName","gender"})
+@JsonPropertyOrder({ "id", "firstName", "lastName", "address", "gender" })
 public class PersonVOV1 extends RepresentationModel<PersonVOV1> implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
+	@JsonProperty("id")
 	@Mapping("id")
 	private Long key;
 

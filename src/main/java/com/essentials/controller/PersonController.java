@@ -23,7 +23,21 @@ public class PersonController {
 	@GetMapping (produces = {com.essentials.util.MediaType.APPLICATION_JSON, com.essentials.util.MediaType.APPLICATION_XML
 	, com.essentials.util.MediaType.APPLICATION_YML})
 	public List<PersonVOV1> findAllPerson() {
-		return service.findAll();
+		List<PersonVOV1> personsV1=service.findAll();
+
+		personsV1.stream()
+				.forEach(p -> {
+                            try {
+                                p.add(linkTo(methodOn(PersonController.class)
+                                        .findByIdPerson(p.getKey())).withSelfRel()
+                                    );
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
+				);
+
+		return personsV1;
 	}
 	
 	
@@ -40,9 +54,10 @@ public class PersonController {
 	
 	@PostMapping(consumes =  {com.essentials.util.MediaType.APPLICATION_JSON, com.essentials.util.MediaType.APPLICATION_XML,"application/x-yaml"},
 				produces ={ com.essentials.util.MediaType.APPLICATION_JSON, com.essentials.util.MediaType.APPLICATION_XML,"application/x-yaml"})
-	public PersonVOV1 createPerson(@RequestBody PersonVOV1 person){
-		
-		return service.create(person);
+	public PersonVOV1 createPerson(@RequestBody PersonVOV1 person) throws Exception {
+		PersonVOV1 personVO = service.create(person);
+		personVO.add(linkTo(methodOn(PersonController.class).findByIdPerson(personVO.getKey())).withSelfRel());
+		return personVO;
 	}
 
     // New configuration informing version 2(v2) (OPTIONAL)
@@ -55,9 +70,10 @@ public class PersonController {
 	
 	@PutMapping(consumes =  {com.essentials.util.MediaType.APPLICATION_JSON, com.essentials.util.MediaType.APPLICATION_XML,"application/x-yaml"},
 			produces = {com.essentials.util.MediaType.APPLICATION_JSON, com.essentials.util.MediaType.APPLICATION_XML,"application/x-yaml"})
-	public PersonVOV1 updatePerson(@RequestBody PersonVOV1 person){
-		
-		return service.update(person);
+	public PersonVOV1 updatePerson(@RequestBody PersonVOV1 person) throws Exception {
+		PersonVOV1 personVO = service.update(person);
+		personVO.add(linkTo(methodOn(PersonController.class).findByIdPerson(personVO.getKey())).withSelfRel());
+		return personVO;
 	}
 	
 	@DeleteMapping(value = "/{id}")
