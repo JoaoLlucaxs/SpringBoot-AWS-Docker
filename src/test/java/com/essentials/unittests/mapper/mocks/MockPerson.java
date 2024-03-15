@@ -3,8 +3,8 @@ package com.essentials.unittests.mapper.mocks;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.essentials.data.vo.v1.PersonVOV1;
-import com.essentials.model.Person;
+import com.essentials.data.VOv1.PersonVOV1;
+import com.essentials.data.model.Person;
 
 public class MockPerson {
 

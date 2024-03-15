@@ -2,8 +2,7 @@ package com.essentials.controller;
 
 import java.util.List;
 
-import com.essentials.data.vo.v1.PersonVOV1;
-import com.essentials.data.vo.v2.PersonVOV2;
+import com.essentials.data.VOv1.PersonVOV1;
 import com.essentials.util.MediaType;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;

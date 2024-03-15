@@ -1,11 +1,9 @@
 package com.essentials.repository;
 
+import com.essentials.data.model.Books;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.essentials.data.model.Person;
-
 @Repository
-public interface PersonRepository extends JpaRepository<Person, Long>{
-
+public interface BookRepository extends JpaRepository<Books,Long> {
 }

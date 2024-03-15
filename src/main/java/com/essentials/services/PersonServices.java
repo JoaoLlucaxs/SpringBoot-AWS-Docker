@@ -3,9 +3,8 @@ package com.essentials.services;
 import java.util.List;
 import java.util.logging.*;
 
-import com.essentials.controller.PersonController;
-import com.essentials.data.vo.v1.PersonVOV1;
-import com.essentials.data.vo.v2.PersonVOV2;
+import com.essentials.data.VOv1.PersonVOV1;
+import com.essentials.data.VOv2.PersonVOV2;
 import com.essentials.converter.DozerConverter;
 import com.essentials.converter.custom.versions.PersonMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 
 import com.essentials.exceptions.ResourceNotFoundException;
-import com.essentials.model.Person;
+import com.essentials.data.model.Person;
 import com.essentials.repository.PersonRepository;
 
 @Service

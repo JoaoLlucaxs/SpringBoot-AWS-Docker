@@ -1,7 +1,7 @@
 package com.essentials.converter.custom.versions;
 
-import com.essentials.data.vo.v2.PersonVOV2;
-import com.essentials.model.Person;
+import com.essentials.data.VOv2.PersonVOV2;
+import com.essentials.data.model.Person;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;

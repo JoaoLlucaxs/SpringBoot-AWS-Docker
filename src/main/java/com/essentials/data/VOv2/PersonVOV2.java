@@ -1,6 +1,4 @@
-package com.essentials.data.vo.v2;
-
-import org.springframework.stereotype.Service;
+package com.essentials.data.VOv2;
 
 import java.io.Serializable;
 import java.util.Date;

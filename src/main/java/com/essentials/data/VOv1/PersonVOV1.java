@@ -1,6 +1,5 @@
-package com.essentials.data.vo.v1;
+package com.essentials.data.VOv1;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.github.dozermapper.core.Mapping;

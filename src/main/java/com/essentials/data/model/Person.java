@@ -1,4 +1,4 @@
-package com.essentials.model;
+package com.essentials.data.model;
 
 import jakarta.persistence.*;
 

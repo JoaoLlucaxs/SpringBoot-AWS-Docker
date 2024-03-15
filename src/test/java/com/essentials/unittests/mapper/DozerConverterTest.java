@@ -3,8 +3,8 @@ package com.essentials.unittests.mapper;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.essentials.converter.DozerConverter;
-import com.essentials.data.vo.v1.PersonVOV1;
-import com.essentials.model.Person;
+import com.essentials.data.VOv1.PersonVOV1;
+import com.essentials.data.model.Person;
 import com.essentials.unittests.mapper.mocks.MockPerson;
 import org.junit.Assert;
 import org.junit.Before;
