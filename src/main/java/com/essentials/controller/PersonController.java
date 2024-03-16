@@ -44,7 +44,7 @@ public class PersonController {
 	})
 	public List<PersonVOV1> findAllPerson() {
 		List<PersonVOV1> personsV1=service.findAll();
-
+		// HATEOAS
 		personsV1.stream().forEach(p -> {
                             try {
                                 p.add(linkTo(methodOn(PersonController.class)
