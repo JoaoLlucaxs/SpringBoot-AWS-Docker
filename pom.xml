@@ -18,6 +18,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<dozer.version>6.4.0</dozer.version>
+		<java-jwt.version>3.18.3</java-jwt.version>
 	</properties>
 	<dependencies>
 
@@ -86,6 +87,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 			<version>3.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 
 
