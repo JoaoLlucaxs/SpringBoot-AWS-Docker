@@ -18,3 +18,5 @@
 - Amazon AWS
 - Integração Continua com Github Actions
 
+<h1>JWT AND SPRING SECURITY</h1>
+<img src="https://github.com/JoaoLlucaxs/SpringBoot-AWS-Docker/assets/92184255/b18aec7f-c060-41b5-a0e4-9782e2cd1986"/>
